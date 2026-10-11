@@ -9,3 +9,6 @@
 # Ignore temporary build outputs
 *.out
 *.log
+
+# Ignore all pdf
+*.pdf
