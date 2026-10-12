@@ -6,13 +6,13 @@ class Theater{
 private:
     string movieTitle;
     double moviePrice;
-    char seats[5][5]; // Here 'O' = Available & 'X' = Booked
+    char seats[4][4]; // Here 'O' = Available & 'X' = Booked
 public:
     Theater(string title,double price){
         movieTitle = title;
         moviePrice = price;
-        for(int i=0;i<5;i++){ // This will set all the sits to 'O' when the programs starts
-            for(int j=0;j<5;j++){
+        for(int i=0;i<4;i++){ // This will set all the sits to 'O' when the programs starts
+            for(int j=0;j<4;j++){
                 seats[i][j] = 'O';
             }
         }
@@ -23,11 +23,11 @@ public:
         cout<<"~~~~~ Welcome to our Theater ~~~~~\n"
             <<"Movie : "<<movieTitle<<endl
             <<"Price : "<<moviePrice<<endl
-            <<"  1 2 3 4 5"<<endl
+            <<"  1 2 3 4"<<endl
             <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        for(int i=0;i<5;i++){
+        for(int i=0;i<4;i++){
             cout<<(i+1)<<" ";
-            for(int j=0;j<5;j++){
+            for(int j=0;j<4;j++){
                 cout<<seats[i][j]<<" ";
             }
             cout<<endl;
@@ -38,7 +38,7 @@ public:
     void bookTicket(int row,int col){
         int r = row - 1; // Because index start from 0
         int c = col - 1;
-        if(r<0 || r>4 || c<0 || c>4){
+        if(r<0 || r>3 || c<0 || c>3){
             cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
             cout<<"Error the row and column must be between (1-4)\n";
             cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -58,7 +58,7 @@ public:
     void cancelTicket(int row,int col){
         int r = row - 1;
         int c = col - 1;
-        if(r<0 || r>4 || c<0 || c>4){
+        if(r<0 || r>3 || c<0 || c>3){
             cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
             cout<<"Error the row and column must be between (1-4)\n";
             cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -77,15 +77,15 @@ public:
 
     void getRevenue(){
         double count = 0;
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
                 if(seats[i][j] == 'X'){
                     count++;
                 }
             }
         }
         cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        cout<<"Total revenue of movie "<<movieTitle<<" : "<<(count*moviePrice)<<"rupees"<<endl;
+        cout<<"Total revenue of movie "<<movieTitle<<" : "<<(count*moviePrice)<<" rupees"<<endl;
         cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     }
 };
