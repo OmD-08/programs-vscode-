@@ -1,0 +1,21 @@
+Fruits = [ "Mango","Banana","Grapes","Dragon fruit"]
+
+print(f"Elements of list : {Fruits}")
+
+Students_marks = []
+s1 = int(input("Enter the marks of student 1 : "))
+Students_marks.append(s1)
+s2 = int(input("Enter the marks of student 2 : "))
+Students_marks.append(s2)
+s3 = int(input("Enter the marks of student 3 : "))
+Students_marks.append(s3)
+s4 = int(input("Enter the marks of student 4 : "))
+Students_marks.append(s4)
+s5 = int(input("Enter the marks of student 5 : "))
+Students_marks.append(s5)
+s6 = int(input("Enter the marks of student 6 : "))
+Students_marks.append(s6)
+Students_marks.sort()
+print(f"The marks of students : ",Students_marks)
+
+print("The total marks of students : ",sum(Students_marks))
